@@ -17,7 +17,7 @@ Online Chatroom is a real-time chat platform built using the socket.io library. 
 ### Front-End Frameworks/Libraries:
 
 - **Socket.io:** Enables real-time communication between the client and server. https://socket.io/
-- **Moment.js:** (Optional, as it has been deprecated in favor of native JavaScript Date methods) Used for working with dates and times in a user-friendly way.
+- **Moment.js:** (Optional, as it has been deprecated in favor of native JavaScript Date methods) Used for working with dates and times in a user-friendly way. https://momentjs.com/
 
 ### Back-End Frameworks:
 
