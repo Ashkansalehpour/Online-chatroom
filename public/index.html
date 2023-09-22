@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/registerStyle.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- title -->
+    <title>Chat Room</title>
+  </head>
+  <body>
+    <!-- Start Container -->
+    <div class="join-container">
+      <!-- header of register -->
+      <header class="join-header">
+        <h1>Welcome</h1>
+      </header>
+      <!-- start form -->
+      <main class="join-main">
+        <!-- start form -->
+        <form action="chat.html">
+          <!--connect form to chat.html-->
+          <div class="form-control wave-group">
+            <input
+              required=""
+              type="text"
+              class="input"
+              id="username"
+              name="username"
+              autocomplete="off"
+            />
+            <span class="bar"></span>
+            <label class="label">
+              <span class="label-char" style="--index: 0">N</span>
+              <span class="label-char" style="--index: 1">a</span>
+              <span class="label-char" style="--index: 2">m</span>
+              <span class="label-char" style="--index: 3">e</span>
+            </label>
+          </div>
+          <div class="form-control custom-select" id="room-container">
+            <div class="select-header">Rooms</div>
+            <select class="select-options" id="room" name="room">
+              <option value="Red Room">Red Room</option>
+              <option value="Blue Room">Blue Room</option>
+            </select>
+          </div>
+          <button type="submit" class="btn" id="my-button">
+            <span> Join Chat </span>
+          </button>
+        </form>
+      </main>
+    </div>
+    <script src="js/styling.js"></script>
+  </body>
+</html>

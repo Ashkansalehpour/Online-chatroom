@@ -1,0 +1,518 @@
+/* Register page style */
+
+:root {
+  --darkGreen-color: #308830;
+  --lightGreen-color: #51c065;
+  --dark-color: #424141;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+  --background-select: linear-gradient(to left, #34495e 3rem, #2c3e50 3rem);
+  --btn-default-bg: #010314;
+  --btn-padding: 15px 20px;
+  --btn-hover-bg: rgb(51, 51, 51);
+  --btn-transition: 0.3s;
+  --btn-letter-spacing: 0.1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: #7241ff;
+  --default-btn-color: #fff;
+  --font-size: 16px;
+  --font-weight: 600;
+  --font-family: Menlo, Roboto Mono, monospace;
+}
+
+/* chitchat animation (Glitch) */
+@keyframes chitchat {
+  0% {
+    content: "#";
+  }
+
+  5% {
+    content: ".";
+  }
+
+  10% {
+    content: "^{";
+  }
+
+  15% {
+    content: "-!";
+  }
+
+  20% {
+    content: "#$_";
+  }
+
+  25% {
+    content: "№:0";
+  }
+
+  30% {
+    content: "#{+.";}35%{content: "@}-?";
+  }
+
+  40% {
+    content: "?{4@%";
+  }
+
+  45% {
+    content: "=.,^!";
+  }
+
+  50% {
+    content: "?2@%";
+  }
+
+  55% {
+    content: "\;1}]";
+  }
+
+  60% {
+    content: "?{%:%";
+    right: 0;
+  }
+
+  65% {
+    content: "|{f[4";
+    right: 0;
+  }
+
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+
+  75% {
+    content: "'1_0<";
+    right: 0;
+  }
+
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+
+  90% {
+    content: "4";
+    right: 0;
+  }
+
+  95% {
+    content: "2";
+    right: 0;
+  }
+
+  100% {
+    content: "";
+    right: 0;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "arial", sans-serif;
+  font-size: 16px;
+  background: #f3f3ff;
+  background: linear-gradient(356deg, #020024 0%, #090979 50%, #00d4ff 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure minimum height is 100% of viewport height */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  box-sizing: border-box; /* This property ensures that padding and border are included in the element's total width and height. */
+  padding: var(
+    --btn-padding
+  ); /* Sets the padding of the button, using a CSS variable */
+  display: flex; /*  CSS variables allow you to define values that can be reused throughout your stylesheets. */
+  align-items: center; /* Makes the button a flex container. */
+  justify-content: center; /*  Aligns the content horizontally to the center within the button.*/
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family); /*  Sets the font properties using CSS variables for weight, size, and family. */
+  background: var(
+    --btn-default-bg
+  ); /*  Sets the background color using a CSS variable */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button. */
+  transition: var(
+    --btn-transition
+  ); /*Applies a transition effect for smooth changes in button appearance. */
+  overflow: hidden; /*  Hides any overflowing content within the button. */
+  box-shadow: var(
+    --btn-shadow
+  ); /*  Sets a box shadow using a CSS variable --btn-shadow. */
+  border-radius: 10px; /* Rounds the corners of the button. */
+  border: 2px solid #2a2b3a; /* Adds a 2px solid border with the specified color. */
+  margin-top: 30%;
+  margin-left: 36%; /*  Sets margins for the button to position it within its containing element. */
+}
+
+.btn span {
+  letter-spacing: var(
+    --btn-letter-spacing
+  ); /*  Sets letter spacing using a CSS variable --btn-letter-spacing.*/
+  transition: var(
+    --btn-transition
+  ); /* : Applies a transition effect for smooth changes in the span's appearance. */
+  box-sizing: border-box; /* Positions the span element relatively within its container. */
+  position: relative; /*  Inherits the background color from the parent button. */
+  background: inherit; /*  Inherits the background color from the parent button. */
+}
+
+.btn span::before {
+  box-sizing: border-box;
+  position: absolute; /* Positions the pseudo-element absolutely within its container. */
+  content: ""; /* Adds an empty content to the pseudo-element.
+  */
+  background: inherit; /* Inherits the background color from the parent button. */
+}
+/* btn hover and focus */
+.btn:hover,
+.btn:focus {
+  background: var(--btn-default-bg);
+  box-shadow: 0px 0px 10px 0px rgba(119, 68, 255, 0.7);
+  border: 2px solid #7241ff;
+}
+
+.btn:hover span,
+.btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.btn:hover span::before,
+.btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+/* Applies styles to form elements. */
+form {
+  position: relative;
+}
+/* register container */
+.join-container {
+  max-width: 500px;
+  margin: 80px auto;
+  color: #fff;
+}
+/* register header */
+.join-header {
+  text-align: center;
+  padding: 20px;
+  background: #0a0a14d9;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid #57647370;
+}
+/* main register field style  */
+.join-main {
+  padding: 62px 26px;
+  background: #0a0a14cf;
+  height: 500px;
+}
+
+.join-main p {
+  margin-bottom: 20px;
+}
+
+/* Keep your existing CSS for .wave-group */
+.wave-group {
+  /* Positions this container relatively to serve as a parent for the form elements within it. */
+  position: relative;
+}
+
+.wave-group .input {
+  /* Sets the font size. */
+  font-size: 16px;
+  /* Sets padding for the input. */
+  padding: 10px 10px 10px 5px;
+  /*  Makes the input a block element to take up the full width. */
+  display: block;
+  /*  Sets the width to 100%. */
+  width: 100%;
+  /* Removes the border. */
+  border: none;
+  /* Adds a 1px solid bottom border. */
+  border-bottom: 1px solid #515151;
+  /* Makes the background transparent. */
+  background: transparent;
+  /* Sets the text color. */
+  color: #f1f1f1;
+}
+/* Styles for the input when it's focused: */
+.wave-group .input:focus {
+  outline: none;
+}
+/* Styles for the label element */
+.wave-group .label {
+  /* Sets the label text color. */
+  color: #999;
+  /*  Sets the font size. */
+  font-size: 18px;
+  /* Sets the font weight to normal. */
+  font-weight: normal;
+  /* Positions the label absolutely within its container. */
+  position: absolute;
+  /* Prevents the label from receiving pointer events. */
+  pointer-events: none;
+  /*  Positions the label. */
+  left: 5px;
+  top: 10px;
+  /* Makes the label a flex container. */
+  display: flex;
+}
+/* Styles for characters inside the label */
+.wave-group .label-char {
+  /* Applies a smooth transition effect. */
+  transition: 0.2s ease all;
+  /* Delays the transition based on an index variable. */
+  transition-delay: calc(var(--index) * 0.05s);
+}
+/* Styles for label characters when the input is focused or has valid content */
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  /*  Moves the characters upward. */
+  transform: translateY(-20px);
+  /* Reduces the font size. */
+  font-size: 14px;
+  /* Changes the text color. */
+  color: #5264ae;
+}
+/* Styles for the "bar" element, which appears to be a line under the input */
+.wave-group .bar {
+  /*  Positions the bar relatively */
+  position: relative;
+  /* Makes the bar a block element. */
+  display: block;
+  /* Sets the initial width of the bar. */
+  width: 200px;
+}
+
+/* Styles for the pseudo-elements ::before and ::after of the bar element: */
+.wave-group .bar:before,
+.wave-group .bar:after {
+  /*  Adds empty content. */
+  content: "";
+  /*  Sets the initial height of the pseudo-elements. */
+  height: 2px;
+  /* : Sets the initial width of the pseudo-elements. */
+  width: 0;
+  /* Positions the pseudo-elements 1px from the bottom of the bar. */
+  bottom: 1px;
+  /* Positions the pseudo-elements absolutely */
+  position: absolute;
+  /* Sets the background color. */
+  background: #5264ae;
+  /* Applies a smooth transition effect for width changes. */
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* Additional styles for the pseudo-elements when the input is focused */
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  /* Increase the width and height of the pseudo-elements to create a wider line at the bottom of the input. */
+  width: 224%;
+  height: 3px;
+}
+
+/* Defines styles for the container of the custom select.*/
+.select {
+  /*  Positions it relatively within its parent. */
+  position: relative;
+  /* Makes it a flex container. */
+  display: flex;
+  /* Sets the width to a maximum of 28rem or 90vw (whichever is smaller). */
+  width: min(28rem, 90vw);
+  /* Sets the background color. */
+  background: var(--background-select);
+  /* Adds rounded corners. */
+  border-radius: 0.25rem;
+  /* Clips any overflowing content. */
+  overflow: hidden;
+  /*  Adds top margin. */
+  margin-top: 78px;
+}
+
+/* Defines styles for the header of the select. */
+.select-header {
+  margin-top: 88px;
+}
+/* Styles for the wrapper of the custom select. */
+.custom-select-wrapper {
+  /* Positions it relatively. */
+  position: relative;
+  /* Makes it an inline-block element. */
+  display: inline-block;
+  /* Disables user selection for the wrapper. */
+  user-select: none;
+}
+/* Styles for the actual <select> element within the wrapper. */
+.custom-select-wrapper select {
+  /* Hides the original select element. */
+  display: none;
+}
+
+/* Styles for the custom select itself. */
+.custom-select {
+  /* Positions it relatively. */
+  position: relative;
+  /* Makes it an inline-block element. */
+  display: inline-block;
+}
+
+/* Styles for the visible trigger element of the custom select. */
+.custom-select-trigger {
+  /* Positions it relatively. */
+  position: relative;
+  /* Makes it a block element. */
+  display: block;
+  /* Sets the width. */
+  width: 452px;
+  /* Sets padding. */
+  padding: 0 84px 0 22px;
+  /* Sets the font size. */
+  font-size: 18px;
+  /*  Sets the font weight.
+ */
+  font-weight: 300;
+  /*  Sets the text color. */
+  color: #94989f;
+  /* Sets the line height. */
+  line-height: 56px;
+  /* Sets the background color. */
+  background: #141b236b;
+  /*  Adds rounded corners. */
+  border-radius: 4px;
+  /* Changes the cursor to a pointer. */
+  cursor: pointer;
+}
+
+/* Styles for the arrow icon displayed after the trigger element. */
+/* It's created using the ::after pseudo-element. */
+.custom-select-trigger:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  right: 25px;
+  margin-top: -3px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg) translateY(-50%);
+  transition: all 0.4s ease-in-out;
+  transform-origin: 50% 0;
+}
+/* Styles for the arrow icon when the select is opened. */
+/* It changes its appearance for an open state. */
+.custom-select.opened .custom-select-trigger:after {
+  margin-top: 3px;
+  transform: rotate(-135deg) translateY(-50%);
+}
+/* Styles for the dropdown options container. */
+.custom-options {
+   /* Positions it absolutely. */
+  position: absolute;
+  display: block;
+  /* Positions it below the trigger element. */
+  top: 100%;
+  left: 0;
+  right: 0;
+  /* Sets the minimum width. */
+  min-width: 100%;
+  /* Adds margins. */
+  margin: 15px 0;
+  border: 1px solid #141b236b;
+  /* Sets the border. */
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Adds a subtle box shadow. */
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.07);
+  /*  Sets the background color. */
+  background: #141b236b;
+  transition: all 0.4s ease-in-out;
+  /* Initially hidden. */
+  opacity: 0;
+  visibility: hidden;
+  /* Prevents pointer events. */
+  pointer-events: none;
+  /*  Initially positioned above the trigger element. */
+  transform: translateY(-15px);
+}
+/* Styles for the dropdown options when the select is opened. */
+/* It becomes visible, and pointer events are enabled. */
+.custom-select.opened .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+/* Styles for the arrow that appears at the top of the options.
+It's created using the ::before pseudo-element.
+Creates a rotated square as an arrow. */
+.custom-options:before {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 100%;
+  right: 25px;
+  width: 7px;
+  height: 7px;
+  margin-bottom: -4px;
+  border-top: 1px solid #474b70;
+  border-left: 1px solid #b5b5b5;
+  background: #fff;
+  transform: rotate(45deg);
+  transition: all 0.4s ease-in-out;
+}
+/* Styles for the arrow when an option is hovered. */
+.option-hover:before {
+  background: #f9f9f9;
+}
+/* Styles for individual options within the dropdown. */
+.custom-option {
+  /* styles are set.
+Has hover and selection styles. */
+  position: relative;
+  display: block;
+  padding: 0 22px;
+  border-bottom: 1px solid #282a3d;
+  font-size: 15px;
+  font-weight: 600;
+  color: #b5b5b5;
+  line-height: 47px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+/* Styles for the first and last options to give them rounded corners accordingly. */
+.custom-option:first-of-type {
+  border-radius: 4px 4px 0 0;
+}
+.custom-option:last-of-type {
+  border-bottom: 0;
+  border-radius: 0 0 4px 4px;
+}
+/* Styles for hovered and selected options to change background color. */
+.custom-option:hover,
+.custom-option.selection {
+  background: #24426760;
+}

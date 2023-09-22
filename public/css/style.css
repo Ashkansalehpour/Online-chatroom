@@ -1,0 +1,310 @@
+/* Web Chat page style */
+
+
+/* colors */
+:root {
+  --darkGreen-color: #8990d3;
+  --lightGreen-color: #787fb8;
+  --dark-color: #424141;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+/* default styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "arial", sans-serif;
+  font-size: 16px;
+  background: linear-gradient(180deg, #0909795a 0%, #5b57a6 0%, #00d4ff 95%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure minimum height is 100% of viewport height */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* This sets the default cursor for all buttons to a pointer, indicating interactivity. */
+button {
+  cursor: pointer;
+}
+/* leave room btn */
+/* This block defines styles for the "Leave Room" button. It specifies various properties including positioning, display, font, background color, border, border-radius, and transitions.
+These styles give the button a specific appearance with background, border, and text formatting. */
+button.leave-room {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: #a79de1;
+  border: 2px solid #495d8d;
+  border-radius: 0.75em;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
+  margin-bottom: 10px;
+}
+
+/* defines styles for a pseudo-element (::before) of the "Leave Room" button. It creates a decorative element that appears before the button's content. These styles include positioning, size, background, box shadow, and transformations. */
+
+button.leave-room::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #475292;
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px #1b273d, 0 0.625em 0 0 #3d37459e;
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+/* styles for the button when it's hovered over. It changes the background color and applies a transformation to create a hover effect. */
+button.leave-room:hover {
+  background: #b5b5f4;
+  transform: translate(0, 0.25em);
+}
+/* Similar to the previous block, this one defines styles for the pseudo-element when the button is hovered over. It changes the box shadow and applies a transformation for a hover effect. */
+
+button.leave-room:hover::before {
+  box-shadow: 0 0 0 2px #475292, 0 0.5em 0 0 #475292;
+  transform: translate3d(0, 0.5em, -1em);
+}
+/* This block defines styles for the button when it's in an active (clicked) state. It changes the background color and applies a transformation for a click effect. */
+
+button.leave-room:active {
+  background: #bfb5f4;
+  transform: translate(0em, 0.75em);
+}
+/* Similar to the previous block, this one defines styles for the pseudo-element when the button is in an active state. It changes the box shadow and applies a transformation for a click effect. */
+button.leave-room:active::before {
+  box-shadow: 0 0 0 2px #8585b1, 0 0 #e7e2ff;
+  transform: translate3d(0, 0, -1em);
+}
+/*  styles for buttons with the class "btn-ch." It sets the font family, size, background color, text color, padding, border, border-radius, and transition properties. */
+/* Sending Button */
+.btn-ch {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+/*  styles for the child span element inside buttons with the "btn-ch" class. It specifies properties such as display, margin-left, and transitions for this element. */
+.btn-ch span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+/* styles for SVG images inside buttons with the "btn-ch" class. It sets the display, transform origin, and transition properties for the SVG element. */
+.btn-ch svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* styles for the .svg-wrapper element inside "btn-ch" buttons when the button is hovered over. It specifies an animation named "fly-1" for this element. */
+.btn-ch:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+/*  styles for SVG images inside "btn-ch" buttons when the button is hovered over. It applies a transformation to the SVG element to create a hover effect. */
+.btn-ch:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+/* styles for the child span element inside "btn-ch" buttons when the button is hovered over. It applies a transformation to create a hover effect.
+css
+ */
+.btn-ch:hover span {
+  transform: translateX(5em);
+}
+/* "btn-ch" buttons when they are in an active (clicked) state. It applies a transformation to create a click effect.
+css
+ */
+.btn-ch:active {
+  transform: scale(0.95);
+}
+
+/*  keyframes animation named "fly-1." It animates the vertical position of elements using a translateY transformation to create a subtle animation effect. */
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* Chat Page style */
+
+.chat-container {
+  max-width: 1100px;
+  background: #fff;
+  margin: 30px auto;
+  overflow: hidden;
+  max-height: 800px; /* Set your preferred max height here */
+}
+
+/* header of chat */
+.chat-header {
+  background: var(--darkGreen-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  box-shadow: 0px 4px 22px -6px black;
+}
+
+/* chat field style */
+.chat-main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+/* sidebar style */
+.chat-sidebar {
+  background: var(--lightGreen-color);
+  color: #fff;
+  padding: 20px 20px 60px;
+  overflow-y: scroll;
+}
+
+/* sidebar style h2 ,h3 */
+.chat-sidebar h2 {
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.chat-sidebar h3 {
+  margin-bottom: 15px;
+}
+
+/* users style in sidebar */
+.chat-sidebar ul li {
+  padding: 10px 0;
+}
+
+/* chat message filed */
+.chat-messages {
+  padding: 30px;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+/* Modify .message style to resemble Telegram */
+.chat-messages .message {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #e8f0fe; /* Light blue background */
+  border-radius: 8px;
+  max-width: 70%; /* Limit message width to 70% of the container */
+}
+
+/* Additional style for the sender's message */
+.chat-messages .message.sent {
+  background-color: #dcf8c6; /* Light green background for sender's message */
+  align-self: flex-end; /* Right-align sender's message */
+}
+
+/* Style for message metadata (date, time, etc.) */
+.chat-messages .message .meta {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+  opacity: 0.7;
+  margin-bottom: 7px;
+}
+
+/* Style for message text */
+.chat-messages .message .text {
+  color: #000; /* Black text color */
+}
+
+/* Style for the time in the metadata */
+.chat-messages .message .meta span {
+  color: #777;
+}
+
+/* Ensure scrollbar is always visible */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the input field and send button */
+.chat-form-container form {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* White background for the input field and button */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.chat-form-container input[type="text"] {
+  font-size: 16px;
+  padding: 10px;
+  height: 40px;
+  flex: 1;
+  border: none; /* Remove input field border */
+  outline: none; /* Remove input field focus outline */
+}
+
+.chat-form-container button.btn {
+  margin-left: 10px;
+  background-color: var(--darkGreen-color); /* Dark green button background */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover state for the send button */
+.chat-form-container button.btn:hover {
+  background-color: var(
+    --lightGreen-color
+  ); /* Light green button background on hover */
+}
